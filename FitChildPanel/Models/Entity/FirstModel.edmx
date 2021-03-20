@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBFITCHILDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="30" />
+          <Property Name="Parola" Type="varchar" MaxLength="200" />
+          <Property Name="Rol" Type="varchar" MaxLength="10" />
+          <Property Name="KullaniciResim" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TBLEGZERSIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EgzersizAdi" Type="varchar" MaxLength="20" />
+          <Property Name="EgzersizYapilisi" Type="varchar(max)" />
+          <Property Name="EgzersizResim" Type="varchar" MaxLength="200" />
+          <Property Name="EgzersizFayda" Type="varchar(max)" />
+          <Property Name="EgzersizSeviye" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TBLONERI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OneriAdi" Type="varchar" MaxLength="30" />
+          <Property Name="OneriResim" Type="varchar" MaxLength="200" />
+          <Property Name="OneriFayda" Type="varchar" MaxLength="200" />
+          <Property Name="OneriTavsiye" Type="varchar" MaxLength="200" />
+          <Property Name="OneriCalisanBolge" Type="varchar" MaxLength="200" />
+          <Property Name="OneriEklenmeTarih" Type="smalldatetime" />
+        </EntityType>
+        <EntityContainer Name="DBFITCHILDModelStoreContainer">
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLEGZERSIZ" EntityType="Self.TBLEGZERSIZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLONERI" EntityType="Self.TBLONERI" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBFITCHILDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Parola" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Rol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KullaniciResim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLEGZERSIZ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EgzersizAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EgzersizResim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EgzersizFayda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EgzersizSeviye" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EgzersizYapilisi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLONERI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OneriAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OneriResim" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OneriFayda" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OneriTavsiye" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OneriCalisanBolge" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OneriEklenmeTarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="DBFITCHILDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" />
+          <EntitySet Name="TBLEGZERSIZ" EntityType="Self.TBLEGZERSIZ" />
+          <EntitySet Name="TBLONERI" EntityType="Self.TBLONERI" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBFITCHILDModelStoreContainer" CdmEntityContainer="DBFITCHILDEntities">
+          <EntitySetMapping Name="TBLADMIN">
+            <EntityTypeMapping TypeName="DBFITCHILDModel.TBLADMIN">
+              <MappingFragment StoreEntitySet="TBLADMIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="KullaniciResim" ColumnName="KullaniciResim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLEGZERSIZ">
+            <EntityTypeMapping TypeName="DBFITCHILDModel.TBLEGZERSIZ">
+              <MappingFragment StoreEntitySet="TBLEGZERSIZ">
+                <ScalarProperty Name="EgzersizYapilisi" ColumnName="EgzersizYapilisi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EgzersizAdi" ColumnName="EgzersizAdi" />
+                <ScalarProperty Name="EgzersizResim" ColumnName="EgzersizResim" />
+                <ScalarProperty Name="EgzersizFayda" ColumnName="EgzersizFayda" />
+                <ScalarProperty Name="EgzersizSeviye" ColumnName="EgzersizSeviye" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLONERI">
+            <EntityTypeMapping TypeName="DBFITCHILDModel.TBLONERI">
+              <MappingFragment StoreEntitySet="TBLONERI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OneriAdi" ColumnName="OneriAdi" />
+                <ScalarProperty Name="OneriResim" ColumnName="OneriResim" />
+                <ScalarProperty Name="OneriFayda" ColumnName="OneriFayda" />
+                <ScalarProperty Name="OneriTavsiye" ColumnName="OneriTavsiye" />
+                <ScalarProperty Name="OneriCalisanBolge" ColumnName="OneriCalisanBolge" />
+                <ScalarProperty Name="OneriEklenmeTarih" ColumnName="OneriEklenmeTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

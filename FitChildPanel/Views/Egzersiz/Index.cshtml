@@ -1,0 +1,44 @@
+﻿@using FitChildPanel.Models.Entity
+@model List<TBLEGZERSIZ>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Egzersizler</h2>
+<hr />
+@Html.ActionLink("Yeni Egzersiz", "EgzersizEkle", null, new { @class = "btn btn-dark" })
+<br />
+<br />
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Resim</th>
+            <th>Ad</th>
+            <th>Yapılışı</th>
+            <th>Fayda</th>
+            <th>Seviye</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var egzersiz in Model)
+        {
+            <tr>
+                <td>@egzersiz.ID</td>
+                <td>
+                    <img class="img-fluid" src="@egzersiz.EgzersizResim" alt="" />
+                </td>
+                <td>@egzersiz.EgzersizAdi</td>
+                <td>@egzersiz.EgzersizYapilisi</td>
+                <td>@egzersiz.EgzersizFayda</td>
+                <td>@egzersiz.EgzersizSeviye</td>
+                <td>Güncelle</td>
+                <td>Sil</td>
+            </tr>
+        }
+    </tbody>
+</table>
