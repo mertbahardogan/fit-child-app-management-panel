@@ -55,7 +55,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Seçenekler:</h6>
-                        <a class="collapse-item" href="buttons.html">Egzersiz İşlemleri</a>
+                        <a class="collapse-item" href="/Egzersiz">Egzersiz İşlemleri</a>
                         <a class="collapse-item" href="cards.html">Egzersiz Api</a>
                     </div>
                 </div>
@@ -83,11 +83,11 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Ayarlar
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            @*<li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -105,21 +105,21 @@
                         <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
                 </div>
-            </li>
+            </li>*@
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            @*<li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span>
                 </a>
-            </li>
+            </li>*@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span>
+                <a class="nav-link" href="/Admin/CikisYap">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Çıkış Yap</span>
                 </a>
             </li>
 
@@ -131,12 +131,6 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <!--<div class="sidebar-card">
-            <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="">
-            <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-        </div>-->
         </ul>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -146,13 +140,6 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Fit Child @DateTime.Now.Year</span>
-                </div>
-            </div>
-        </footer>
         <!-- Bootstrap core JavaScript-->
         <script src="~/Themes/AdminPanel/vendor/jquery/jquery.min.js"></script>
         <script src="~/Themes/AdminPanel/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -166,7 +153,7 @@
 
 
         @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
+            @Scripts.Render("~/bundles/bootstrap")*@
         @RenderSection("scripts", required: false)
 
 
@@ -174,3 +161,10 @@
     </div>
 </body>
 </html>
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Fit Child @DateTime.Now.Year</span>
+        </div>
+    </div>
+</footer>

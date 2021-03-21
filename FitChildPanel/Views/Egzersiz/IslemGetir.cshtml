@@ -1,0 +1,48 @@
+﻿@model FitChildPanel.Models.Entity.TBLEGZERSIZ
+@{
+    ViewBag.Title = "IslemGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("IslemGuncelle", "Egzersiz", FormMethod.Post, new { @class = "was-validated" }))
+{
+    @Html.AntiForgeryToken();
+
+    <div style="margin-bottom:15px;">
+        <div class="form-group">
+            @Html.LabelFor(k => k.EgzersizAdi)
+            @Html.TextBoxFor(k => k.EgzersizAdi, new { @class = "form-control", placeholder = "Egzersiz Adı", required = "required" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.EgzersizYapilisi)
+            @Html.TextAreaFor(k => k.EgzersizYapilisi, new { @class = "form-control", placeholder = "Egzersiz Yapılışı", required = "required", style = "height:200px" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.EgzersizFayda)
+            @Html.TextBoxFor(k => k.EgzersizFayda, new { @class = "form-control", placeholder = "Egzersiz Fayda", required = "required" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.EgzersizSeviye)
+            @Html.TextBoxFor(k => k.EgzersizSeviye, new { @class = "form-control", placeholder = "Egzersiz Seviye", required = "required" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(k => k.EgzersizResim)
+            @Html.TextBoxFor(k => k.EgzersizResim, new { @class = "form-control", placeholder = "Egzersiz Resim", required = "required" })
+            @*@Html.ValidationMessageFor(k => k.AD)*@
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </div>
+    @Html.HiddenFor(y => y.ID)
+}
+
+
+
+
+
