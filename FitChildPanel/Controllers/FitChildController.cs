@@ -24,5 +24,7 @@ namespace FitChildPanel.Controllers
             EgzersizSeviye = k.EgzersizSeviye,
             EgzersizYapilisi = k.EgzersizYapilisi,
         }).ToList();
+
+        
     }
 }

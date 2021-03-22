@@ -168,10 +168,13 @@
     <Compile Include="Controllers\EgzersizController.cs" />
     <Compile Include="Controllers\FitChildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OneriController.cs" />
+    <Compile Include="Controllers\StoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Classes\Egzersizler.cs" />
+    <Compile Include="Models\Classes\Oneriler.cs" />
     <Compile Include="Models\Entity\FirstModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2260,6 +2263,9 @@
     <Content Include="Themes\AdminLogin\assets\scss\login.scss" />
     <Content Include="Themes\AdminLogin\package-lock.json" />
     <Content Include="Themes\AdminLogin\package.json" />
+    <Content Include="Views\Oneri\Index.cshtml" />
+    <Content Include="Views\Oneri\IslemEkle.cshtml" />
+    <Content Include="Views\Oneri\IslemGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

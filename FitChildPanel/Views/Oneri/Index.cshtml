@@ -1,0 +1,54 @@
+﻿@using FitChildPanel.Models.Entity
+@model List<TBLONERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öneriler</h2>
+<hr />
+@Html.ActionLink("Yeni Öneri", "IslemEkle", null, new { @class = "btn btn-dark" })
+<br />
+<br />
+@if (TempData["oneriData"] != null)
+{
+    <div class="alert alert-success alert-dark">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Öneri </strong> @TempData["oneriData"]
+    </div>
+}
+<br />
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Resim</th>
+            <th>Ad</th>
+            <th>Fayda</th>
+            <th>Tavsiye</th>
+            <th>Çalıştırdığı Bölge</th>
+            <th>Eklenme Tarih</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var oneri in Model)
+        {
+        <tr>
+            <td>@oneri.ID</td>
+            <td>
+                <img class="img-fluid" src="@oneri.OneriResim" alt="" />
+            </td>
+            <td>@oneri.OneriAdi</td>
+            <td>@oneri.OneriFayda</td>
+            <td>@oneri.OneriTavsiye</td>
+            <td>@oneri.OneriCalisanBolge</td>
+            <td>@Convert.ToDateTime(oneri.OneriEklenmeTarih).ToString("dd/MMM/yyyy")</td>
+            <td><a href="/Oneri/IslemGetir/@oneri.ID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Oneri/IslemSil/@oneri.ID" class="btn btn-danger" onclick="return confirm('Silmek istiyor musunuz?')">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
